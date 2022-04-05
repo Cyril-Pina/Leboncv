@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My First App</string>
+    <string name="app_name">Leboncv</string>
+    <string name="search_page_title">Rechercher</string>
+    <string name="message_page_title">Message</string>
+    <string name="fav_page_title">Favoris</string>
+    <string name="profile_page_title">Profil</string>
 </resources>
