@@ -19,5 +19,7 @@
             </intent-filter>
         </activity>
 
+        <meta-data android:name="io.sentry.dsn" android:value="https://cb52bba2cb2f437a8e42420861662b22@o1192060.ingest.sentry.io/6313637" />
+        <meta-data android:name="io.sentry.traces.sample-rate" android:value="1.0" />
     </application>
 </manifest>
