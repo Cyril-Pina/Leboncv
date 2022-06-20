@@ -16,6 +16,11 @@
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
+    <style name="CustomTabWidget" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="CustomBottomNavigationView">
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
@@ -37,11 +42,101 @@
         <item name="android:textColorHighlight">@color/colorPrimary</item>
     </style>
 
+    <style name="TitleTextView" parent="DefaultTextView">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/title_text_view_size</item>
+    </style>
+
+    <style name="SmallTextView" parent="DefaultTextView">
+        <item name="android:textSize">@dimen/default_small_text_view_size</item>
+    </style>
+
+    <style name="SmallBoldTextView" parent="SmallTextView">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="NormalBoldTextView" parent="DefaultTextView">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="BigBoldTextView" parent="TitleTextView">
+        <item name="android:textSize">@dimen/big_text_view_size</item>
+    </style>
+
+    <style name="NormalLightTextView" parent="DefaultTextView">
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <style name="DefaultButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="RectangularButton" parent="DefaultButton">
+        <item name="android:background">@drawable/background_rect_button</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="DefaultEditText">
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">@dimen/default_edit_text_size</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textColorHighlight">@color/colorPrimary</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="DefaultImageView">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="DefaultLikeAnimationView">
+        <item name="android:layout_width">@dimen/favourite_anim_size</item>
+        <item name="android:layout_height">@dimen/favourite_anim_size</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="SmallIconImageView" parent="DefaultImageView">
+        <item name="android:layout_width">@dimen/small_icon_size</item>
+        <item name="android:layout_height">@dimen/small_icon_size</item>
+        <item name="android:tint">@android:color/darker_gray</item>
+    </style>
+
+    <style name="NormalIconImageView" parent="DefaultImageView">
+        <item name="android:layout_width">@dimen/normal_icon_size</item>
+        <item name="android:layout_height">@dimen/normal_icon_size</item>
+    </style>
+
+    <style name="BigIconImageView" parent="DefaultImageView">
+        <item name="android:layout_width">@dimen/big_icon_size</item>
+        <item name="android:layout_height">@dimen/big_icon_size</item>
+    </style>
+
+    <style name="VeryBigIconImageView" parent="DefaultImageView">
+        <item name="android:layout_width">@dimen/very_big_icon_size</item>
+        <item name="android:layout_height">@dimen/very_big_icon_size</item>
+    </style>
+
+    <style name="ProfilePictureImageView" parent="DefaultImageView">
+        <item name="android:layout_width">@dimen/profile_picture_size</item>
+        <item name="android:layout_height">@dimen/profile_picture_size</item>
+    </style>
+
+    <style name="DefaultImageButton" parent="DefaultImageView">
+        <item name="android:layout_width">@dimen/default_image_button_size</item>
+        <item name="android:layout_height">@dimen/default_image_button_size</item>
+        <item name="android:padding">@dimen/default_image_button_padding</item>
+        <item name="android:tint">@android:color/darker_gray</item>
+        <item name="android:background">@drawable/ripple_round_transp_image_button</item>
+    </style>
+
+    <style name="RoundBackgroundImageButton" parent="DefaultImageButton">
+        <item name="android:background">@drawable/ripple_round_image_button</item>
+        <item name="android:tint">@android:color/black</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:elevation">@dimen/round_button_elevation</item>
+    </style>
 </resources>

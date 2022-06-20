@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.cyriltheandroid.leboncv.utils.DateUtils" />
+
+        <variable
+            name="chatMessage"
+            type="com.cyriltheandroid.leboncv.model.ChatMessage" />
+
+        <variable
+            name="msgClickListener"
+            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+
+        <variable
+            name="backgroundClickListener"
+            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> backgroundClickListener.onClick(0, null)}"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:id="@+id/sender_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_msg_layout"
+            android:layout_marginBottom="@dimen/m_b_sender_name"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{chatMessage.sender}"
+            app:layout_constraintBottom_toTopOf="@id/content_message_layout"
+            app:layout_constraintStart_toStartOf="@id/content_message_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cyril" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_message_layout"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_msg_layout"
+            android:layout_marginEnd="@dimen/margin_msg_layout"
+            android:layout_marginBottom="@dimen/margin_msg_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sender_name_text_view"
+            app:layout_constraintWidth_percent=".8">
+
+            <TextView
+                android:id="@+id/content_msg_text_view"
+                style="@style/DefaultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_incoming_msg"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="@{() -> msgClickListener.onClick(0, chatMessage)}"
+                android:padding="@dimen/padding_msg_text_view"
+                android:text="@{chatMessage.contentMessage}"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Salut les copaings, comment ça se passe ici ? Un petit jaune oooOH PASTAGA tu mé fé craqué." />
+
+            <TextView
+                style="@style/SmallTextView"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_sender_name"
+                android:text="@{DateUtils.getMessageFormattedDateAsString(chatMessage.sendingDate)}"
+                android:textColor="@android:color/darker_gray"
+                android:visibility="@{chatMessage._isChecked ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/content_msg_text_view"
+                app:layout_constraintTop_toBottomOf="@id/content_msg_text_view"
+                tools:text="Cyril"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

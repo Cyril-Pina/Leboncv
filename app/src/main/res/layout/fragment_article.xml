@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.cyriltheandroid.leboncv.utils.StringUtils" />
+
+        <import type="com.cyriltheandroid.leboncv.utils.ArticleUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cyriltheandroid.leboncv.ui.viewmodel.ArticleViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_arrow_image_button"
+                style="@style/RoundBackgroundImageButton"
+                android:layout_marginStart="@dimen/margin_main_frag_title"
+                android:layout_marginTop="@dimen/margin_round_image_button"
+                android:layout_marginBottom="@dimen/margin_round_image_button"
+                android:contentDescription="@string/ctn_desc_back_arrow"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/favourite_animation_view"
+                style="@style/RoundBackgroundImageButton"
+                android:layout_marginTop="@dimen/margin_round_image_button"
+                android:layout_marginEnd="@dimen/margin_main_frag_title"
+                android:layout_marginBottom="@dimen/margin_round_image_button"
+                android:contentDescription="@string/ctn_desc_back_arrow"
+                android:onClick="@{(view) -> viewModel.updateFavArticle(viewModel.article, view)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_enableMergePathsForKitKatAndAbove="true"
+                app:lottie_progress="@{viewModel.article.fav ? 0.40f : 0.0f}"
+                app:lottie_rawRes="@raw/black_like_anim"
+                app:lottie_speed="@dimen/like_anim_speed" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/images_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/article_image_height"
+                    android:background="@color/blackTransparent"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/images_layout"
+                    layout="@layout/layout_images"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_layout_img"
+                    app:layout_constraintBottom_toBottomOf="@id/images_view_pager"
+                    app:layout_constraintStart_toStartOf="@id/images_view_pager"
+                    app:nbImages='@{"0/4"}' />
+
+                <TextView
+                    android:id="@+id/main_title_text_view"
+                    style="@style/BigBoldTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dist_components_article_frag"
+                    android:text="@{viewModel.article.title}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/images_view_pager"
+                    tools:text="Voltaire" />
+
+                <TextView
+                    android:id="@+id/first_subtitle_text_view"
+                    style="@style/SmallTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dist_components_article_frag"
+                    android:layout_marginEnd="@dimen/dist_components_article_frag"
+                    android:text="@{ArticleUtils.getArticleFirstSubtitle(viewModel.article, viewModel.article.categoryType)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/main_title_text_view"
+                    tools:text="CDI . Paris 75017" />
+
+                <TextView
+                    android:id="@+id/second_subtitle_text_view"
+                    style="@style/SmallTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dist_components_article_frag"
+                    android:layout_marginEnd="@dimen/dist_components_article_frag"
+                    android:text="@{ArticleUtils.getArticleSecondSubtitle(viewModel.article, viewModel.article.categoryType)}"
+                    android:visibility="@{ArticleUtils.secondSubtitleVisibility(viewModel.article.categoryType)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/first_subtitle_text_view"
+                    tools:text="Du 12/05/2020 au 21/05/2022" />
+
+                <TextView
+                    android:id="@+id/content_title_text_view"
+                    style="@style/TitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dist_components_article_frag"
+                    android:layout_marginTop="@dimen/margin_top_article_desc"
+                    android:layout_marginEnd="@dimen/dist_components_article_frag"
+                    android:text="@string/article_desc_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/second_subtitle_text_view" />
+
+                <TextView
+                    android:id="@+id/content_text_view"
+                    style="@style/SmallTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dist_components_article_frag"
+                    android:text="@{StringUtils.getFormattedContent(viewModel.article.content)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content_title_text_view"
+                    tools:text="BablablaBablablablabBablablablabBablablablabBablablablabBablablablabBablablablabBablablablabBablablablabblabBablablablabBablablablabBablablablabBablablablabBablablablabBablablablabBablablablab" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/map_location_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_t_article_part"
+                    android:visibility="@{viewModel.article.location != null ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content_text_view">
+
+                    <TextView
+                        android:id="@+id/city_location_text_view"
+                        style="@style/TitleTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dist_components_article_frag"
+                        android:layout_marginEnd="@dimen/dist_components_article_frag"
+                        android:text="@{viewModel.article.location.cityWithZipCode}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Paris 75017" />
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/small_map_fragment"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_article_map"
+                        android:layout_marginTop="@dimen/dist_components_article_frag"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/city_location_text_view" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/linked_articles_text_view"
+                    style="@style/TitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dist_components_article_frag"
+                    android:layout_marginTop="@dimen/margin_t_article_part"
+                    android:layout_marginEnd="@dimen/dist_components_article_frag"
+                    android:text="@string/linked_articles_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/map_location_layout" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/linked_articles_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dist_components_article_frag"
+                    android:layout_marginBottom="@dimen/dist_components_article_frag"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:paddingStart="@dimen/dist_components_article_frag"
+                    android:paddingEnd="@dimen/zero"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linked_articles_text_view"
+                    tools:listitem="@layout/item_small_article" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

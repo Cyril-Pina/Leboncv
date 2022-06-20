@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.cyriltheandroid.leboncv.utils.DateUtils" />
+
+        <variable
+            name="chatMessage"
+            type="com.cyriltheandroid.leboncv.model.ChatMessage" />
+
+        <variable
+            name="backgroundClickListener"
+            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> backgroundClickListener.onClick(0, null)}">
+
+        <TextView
+            android:id="@+id/msg_timestamp_text_view"
+            style="@style/SmallTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_msg_layout"
+            android:gravity="center"
+            android:text="@{DateUtils.getTimestampFormattedDateAsString(chatMessage.sendingDate)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="17/10/2017 à 21h30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

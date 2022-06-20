@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FilterToggleButton">
+        <attr name="isSelected" format="boolean" />
+        <attr name="selectedBackground" format="integer" />
+        <attr name="unselectedBackground" format="integer" />
+        <attr name="selectedTextTint" format="color" />
+        <attr name="unselectedTextTint" format="color" />
+    </declare-styleable>
+</resources>

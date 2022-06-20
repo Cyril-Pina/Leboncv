@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/favourite_title_text_view"
+        style="@style/TitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dist_components_fav_frag"
+        android:layout_marginTop="@dimen/margin_main_frag_title"
+        android:layout_marginEnd="@dimen/dist_components_fav_frag"
+        android:layout_marginBottom="@dimen/margin_main_frag_title"
+        android:text="@string/favourite_title"
+        app:layout_constraintBottom_toTopOf="@id/favourites_main_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/favourites_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favourite_title_text_view"
+        tools:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favourites_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_favourite" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete_fav_articles_fab"
+            style="@style/DefaultImageView"
+            android:layout_width="@dimen/default_size_fab"
+            android:layout_height="@dimen/default_size_fab"
+            android:layout_margin="@dimen/default_margin_fab"
+            android:backgroundTint="@color/colorPrimary"
+            android:clickable="true"
+            android:contentDescription="@string/ctn_desc_delete_fav"
+            android:focusable="true"
+            android:src="@drawable/ic_trash_can"
+            android:tint="@android:color/white"
+            app:borderWidth="@dimen/zero"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:pressedTranslationZ="@dimen/pressed_transl_z_fab" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/no_favourite_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favourite_title_text_view">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/favourite_animation_view"
+            style="@style/BigIconImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/black_like_anim"
+            app:lottie_speed="@dimen/like_anim_speed" />
+
+        <TextView
+            android:id="@+id/no_fav_title_text_view"
+            style="@style/SmallBoldTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_fav_frag"
+            android:layout_marginEnd="@dimen/dist_components_fav_frag"
+            android:gravity="center"
+            android:text="@string/no_favourite_msg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favourite_animation_view" />
+
+        <TextView
+            android:id="@+id/no_fav_subtitle_text_view"
+            style="@style/SmallTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_fav_frag"
+            android:layout_marginEnd="@dimen/dist_components_fav_frag"
+            android:gravity="center"
+            android:text="@string/no_favourite_scd_msg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/no_fav_title_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

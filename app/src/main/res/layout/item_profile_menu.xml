@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemMenu"
+            type="com.cyriltheandroid.leboncv.model.ItemMenu" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="clickListener"
+            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> clickListener.onClick(index, itemMenu)}"
+        android:padding="@dimen/dist_components_profile_frag">
+
+        <ImageView
+            android:id="@+id/icon_setting_image_view"
+            style="@style/NormalIconImageView"
+            android:contentDescription="@string/ctn_desc_ic_settings"
+            android:src="@{itemMenu.imgResId}"
+            android:tint="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@{itemMenu.imgResId}"
+            app:tint="@android:color/darker_gray"
+            tools:ignore="UseAppTint"
+            tools:src="@drawable/img_manga" />
+
+        <TextView
+            style="@style/TitleTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_s_text_profile_menu"
+            android:layout_marginTop="@dimen/margin_t_b_item_menu"
+            android:layout_marginBottom="@dimen/margin_t_b_item_menu"
+            android:ellipsize="end"
+            android:lines="@integer/one_line"
+            android:text="@{context.getString(itemMenu.titleResId)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_setting_image_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Compétences" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

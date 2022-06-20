@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/favourite_page"
+    app:startDestination="@id/favourite_fragment">
+
+    <fragment
+        android:id="@+id/favourite_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.FavouriteFragment"
+        android:label="FavouriteFragment"
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_favourite_page_to_article_fragment"
+            app:destination="@id/article_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/article_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.ArticleFragment"
+        android:label="ArticleFragment"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="article"
+            app:argType="com.cyriltheandroid.leboncv.model.Article" />
+        <action
+            android:id="@+id/action_article_fragment_self"
+            app:destination="@id/article_fragment" />
+    </fragment>
+
+</navigation>

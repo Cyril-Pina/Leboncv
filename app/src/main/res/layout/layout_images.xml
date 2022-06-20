@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="nbImages"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_nb_images"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/padding_s_e_nb_img"
+            android:paddingTop="@dimen/padding_t_b_nb_img"
+            android:paddingEnd="@dimen/padding_s_e_nb_img"
+            android:paddingBottom="@dimen/padding_t_b_nb_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                style="@style/SmallIconImageView"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/ctn_desc_ic_camera"
+                android:src="@drawable/ic_camera"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_camera"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                style="@style/DefaultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_s_nb_img"
+                android:maxLength="@integer/three_char"
+                android:text="@{nbImages}"
+                android:textColor="@android:color/white"
+                tools:text="1" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
