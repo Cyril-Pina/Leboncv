@@ -1,7 +1,7 @@
-image: openjdk:8-jdk
+image: openjdk:11-jdk
 
 variables:
-  ANDROID_COMPILE_SDK: "31"
+  ANDROID_COMPILE_SDK: "32"
   ANDROID_BUILD_TOOLS: "30.0.3"
   ANDROID_SDK_TOOLS:   "7583922"
 
@@ -22,8 +22,6 @@ before_script:
   - set +o pipefail
   - yes | android-sdk-linux/cmdline-tools/latest/bin/sdkmanager --licenses
   - set -o pipefail
-  - "export VERSION_CODE=$(($CI_PIPELINE_IID)) && echo $VERSION_CODE"
-  - "export VERSION_NAME=`echo ${CI_COMMIT_REF_NAME}` && echo $VERSION_NAME"
   - bundle update --bundler
   - bundle install --path vendor/cache
   - bundle update fastlane
@@ -49,6 +47,16 @@ assembleDebug:
     - app/build/outputs/
   only:
     - merge_requests
+
+assembleRelease:
+  stage: build
+  script:
+    - bundle exec fastlane buildRelease
+  artifacts:
+    paths:
+    - app/build/outputs/
+  only:
+    - tags
 
 debugTests:
   stage: test
