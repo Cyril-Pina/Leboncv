@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="language"
+            type="com.cyriltheandroid.leboncv.model.Language" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dist_components_submenu">
+
+        <ImageView
+            android:id="@+id/contact_image_view"
+            style="@style/NormalIconImageView"
+            android:contentDescription="@string/ctn_desc_flag_lang"
+            android:src="@{language.flagIdRes}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@{language.flagIdRes}"
+            tools:src="@drawable/img_flag_fr" />
+
+        <TextView
+            android:id="@+id/lang_text_view"
+            style="@style/NormalBoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_submenu"
+            android:text="@{language.name}"
+            app:layout_constraintBottom_toBottomOf="@id/contact_image_view"
+            app:layout_constraintStart_toEndOf="@id/contact_image_view"
+            app:layout_constraintTop_toTopOf="@id/contact_image_view"
+            tools:text="Français" />
+
+        <TextView
+            android:id="@+id/lang_level_text_view"
+            style="@style/NormalLightTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_lang_frag"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_light"
+            android:lines="@integer/one_line"
+            android:text="@{language.languageLevel.value}"
+            app:layout_constraintBottom_toBottomOf="@id/lang_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lang_text_view"
+            app:layout_constraintTop_toTopOf="@id/lang_text_view"
+            tools:text="Natale" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

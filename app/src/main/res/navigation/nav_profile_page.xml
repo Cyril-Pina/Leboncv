@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_page"
+    app:startDestination="@id/profile_fragment">
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_fragment_to_profile_details_fragment"
+            app:destination="@id/profile_details_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+            <argument
+                android:name="profile"
+                app:argType="com.cyriltheandroid.leboncv.model.Profile" />
+        </action>
+        <action
+            android:id="@+id/action_profile_fragment_to_skills_fragment"
+            app:destination="@id/skills_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profile_fragment_to_lang_fragment"
+            app:destination="@id/lang_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profile_fragment_to_contact_fragment"
+            app:destination="@id/contact_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_details_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.ProfileDetailsFragment"
+        android:label="ProfileDetailsFragment"
+        tools:layout="@layout/fragment_profile_details">
+        <argument
+            android:name="profile"
+            app:argType="com.cyriltheandroid.leboncv.model.Profile" />
+        <action
+            android:id="@+id/action_profile_details_fragment_to_resume_activity"
+            app:destination="@id/resume_activity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/skills_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.SkillsFragment"
+        android:label="SkillsFragment"
+        tools:layout="@layout/fragment_skills" />
+
+    <fragment
+        android:id="@+id/lang_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.LanguageFragment"
+        android:label="LanguageFragment"
+        tools:layout="@layout/fragment_lang" />
+
+    <fragment
+        android:id="@+id/contact_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.ContactFragment"
+        android:label="ContactFragment"
+        tools:layout="@layout/fragment_contact" />
+
+    <activity
+        android:id="@+id/resume_activity"
+        android:name="com.cyriltheandroid.leboncv.ui.ResumeActivity"
+        android:label="ResumeActivity"
+        tools:layout="@layout/activity_resume" />
+</navigation>

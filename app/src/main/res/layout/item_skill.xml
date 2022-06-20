@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="skill"
+            type="com.cyriltheandroid.leboncv.model.Skill" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dist_components_skills_frag">
+
+        <View
+            android:id="@+id/bulleted_mark_view"
+            android:layout_width="@dimen/size_skill_bulleted_mark"
+            android:layout_height="@dimen/size_skill_bulleted_mark"
+            android:background="@drawable/background_skill_bulleted_mark"
+            app:layout_constraintBottom_toBottomOf="@id/skill_title_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/skill_title_text_view" />
+
+        <TextView
+            android:id="@+id/skill_title_text_view"
+            style="@style/TitleTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_skills_frag"
+            android:text="@{skill.skill}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bulleted_mark_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Travail d'équipe" />
+
+        <TextView
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dist_components_skills_frag"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@{skill.description}"
+            app:layout_constraintEnd_toEndOf="@id/skill_title_text_view"
+            app:layout_constraintStart_toStartOf="@id/skill_title_text_view"
+            app:layout_constraintTop_toBottomOf="@id/skill_title_text_view"
+            tools:text="Fort de mes blablaFort de mes blablaFort de mes blablaFort de mes blablaFort de mes blabla" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

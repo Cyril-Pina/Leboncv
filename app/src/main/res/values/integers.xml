@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="zero">0</integer>
+    <integer name="one_line">1</integer>
+    <integer name="angle_270">270</integer>
+    <integer name="two_line">2</integer>
+    <integer name="three_char">3</integer>
+    <item name="like_anim_speed" type="dimen" format="float">1.8</item>
+</resources>

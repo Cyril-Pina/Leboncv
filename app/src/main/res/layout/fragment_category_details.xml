@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.cyriltheandroid.leboncv.model.CategoryType" />
+
+        <variable
+            name="categoryType"
+            type="com.cyriltheandroid.leboncv.model.CategoryType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_category_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_top_category_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_arrow_image_button"
+                style="@style/DefaultImageButton"
+                android:contentDescription="@string/ctn_desc_back_arrow"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/search_card_view"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin_card_view"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="@dimen/default_card_view_radius"
+                app:cardElevation="@dimen/default_card_view_elevation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/back_arrow_image_button"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_padding_layout_card_view">
+
+                    <ImageView
+                        android:id="@+id/search_image_view"
+                        style="@style/SmallIconImageView"
+                        android:layout_marginStart="@dimen/margin_start_search_icon"
+                        android:layout_marginEnd="@dimen/margin_end_search_icon"
+                        android:contentDescription="@string/ctn_desc_search_icon"
+                        android:src="@drawable/ic_search_bar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/search_edit_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_search_bar" />
+
+                    <EditText
+                        android:id="@+id/search_edit_text"
+                        style="@style/DefaultEditText"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="@{(categoryType != null &amp;&amp; categoryType != CategoryType.NO_CATEGORY) ? @string/hint_category_search_bar(context.getString(categoryType.valueResId).toLowerCase()) : @string/hint_search_bar}"
+                        android:imeOptions="actionSearch"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:maxLines="@integer/one_line"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/search_image_view"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/articles_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:layout_marginStart="@dimen/margin_item_article_history"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_category_layout"
+            app:spanCount="2"
+            tools:listitem="@layout/item_article"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/no_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_category_layout">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/favourite_animation_view"
+                style="@style/VeryBigIconImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/not_found_anim" />
+
+            <TextView
+                android:id="@+id/no_fav_title_text_view"
+                style="@style/SmallBoldTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dist_components_fav_frag"
+                android:layout_marginEnd="@dimen/dist_components_fav_frag"
+                android:gravity="center"
+                android:text="@string/no_result_msg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/favourite_animation_view" />
+
+            <TextView
+                android:id="@+id/no_fav_subtitle_text_view"
+                style="@style/SmallTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dist_components_fav_frag"
+                android:layout_marginEnd="@dimen/dist_components_fav_frag"
+                android:gravity="center"
+                android:text="@string/no_result_sec_msg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/no_fav_title_text_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.cyriltheandroid.leboncv.utils.ArticleUtils" />
+
+        <variable
+            name="article"
+            type="com.cyriltheandroid.leboncv.model.Article" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="clickListener"
+            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+
+        <variable
+            name="favClickListener"
+            type="com.cyriltheandroid.leboncv.adapter.FavouriteClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> clickListener.onClick(index, article)}"
+        android:padding="@dimen/dist_components_fav_frag">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fav_article_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/default_card_view_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                style="@style/DefaultImageView"
+                android:layout_width="@dimen/fav_picture_size"
+                android:layout_height="@dimen/fav_picture_size"
+                android:contentDescription="@string/ctn_desc_article_picture"
+                app:imageUrl="@{article.images != null ? article.images[0].url : @string/empty_string}"
+                tools:src="@drawable/img_diploma" />
+
+        </androidx.cardview.widget.CardView>
+
+        <include
+            layout="@layout/layout_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_layout_img"
+            app:layout_constraintBottom_toBottomOf="@id/fav_article_image_view"
+            app:layout_constraintStart_toStartOf="@id/fav_article_image_view"
+            app:nbImages="@{Integer.toString(article.images != null ? article.images.size() : @integer/zero)}" />
+
+        <TextView
+            android:id="@+id/fav_first_title_text_view"
+            style="@style/SmallBoldTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_fav_frag"
+            android:text="@{ArticleUtils.getArticleTitleFromType(article, article.categoryType)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fav_article_image_view"
+            app:layout_constraintTop_toTopOf="@id/fav_article_image_view"
+            tools:text="Expérience professionnelle" />
+
+        <TextView
+            android:id="@+id/fav_second_title_text_view"
+            style="@style/SmallBoldTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="@integer/one_line"
+            android:text="@{ArticleUtils.getArticleDescFromType(article, article.categoryType)}"
+            app:layout_constraintEnd_toEndOf="@id/fav_first_title_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/fav_first_title_text_view"
+            app:layout_constraintTop_toBottomOf="@id/fav_first_title_text_view"
+            tools:text="Stage" />
+
+        <TextView
+            android:id="@+id/fav_category_text_view"
+            style="@style/SmallTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:text="@{context.getString(article.categoryType.valueResId)}"
+            app:layout_constraintEnd_toEndOf="@id/fav_second_title_text_view"
+            app:layout_constraintStart_toStartOf="@id/fav_second_title_text_view"
+            app:layout_constraintTop_toBottomOf="@id/fav_second_title_text_view"
+            tools:text="Expérience professionnelle" />
+
+        <TextView
+            android:id="@+id/fav_first_subtitle_text_view"
+            style="@style/SmallTextView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="@integer/one_line"
+            android:text="@{ArticleUtils.getFavArticleFirstSubtitle(article, article.categoryType)}"
+            app:layout_constraintBottom_toTopOf="@id/fav_second_subtitle_text_view"
+            app:layout_constraintEnd_toStartOf="@id/favourite_animation_view"
+            app:layout_constraintStart_toStartOf="@id/fav_category_text_view"
+            tools:text="Paris 75005" />
+
+        <TextView
+            android:id="@+id/fav_second_subtitle_text_view"
+            style="@style/SmallTextView"
+            android:layout_width="@dimen/zero"
+            android:ellipsize="end"
+            android:maxLines="@integer/two_line"
+            android:layout_height="wrap_content"
+            android:text="@{ArticleUtils.getFavArticleSecondSubtitle(article, article.categoryType)}"
+            app:layout_constraintBottom_toBottomOf="@id/fav_article_image_view"
+            app:layout_constraintEnd_toEndOf="@id/fav_first_subtitle_text_view"
+            app:layout_constraintStart_toStartOf="@id/fav_first_subtitle_text_view"
+            tools:text="2 ans" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/favourite_animation_view"
+            app:lottie_enableMergePathsForKitKatAndAbove="true"
+            style="@style/DefaultLikeAnimationView"
+            android:onClick="@{(view) -> favClickListener.onClick(index, view, article)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_progress="@{article.fav ? 0.44f : 0.0f}"
+            app:lottie_rawRes="@raw/like_anim"
+            app:lottie_speed="@dimen/like_anim_speed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

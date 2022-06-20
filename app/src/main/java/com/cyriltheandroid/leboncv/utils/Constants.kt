@@ -1,6 +1,20 @@
 package com.cyriltheandroid.leboncv.utils
 
-val SEARCH_FRAG = "search_frag"
-val FAV_FRAG = "fav_frag"
-val MSG_FRAG = "msg_frag"
-val PROFILE_FRAG = "profile_frag"
+const val FIRST_INDEX = 0
+
+const val FAV_INDEX = 0
+const val SKILLS_INDEX = 1
+const val LANG_INDEX = 2
+const val CONTACT_INDEX = 3
+const val ABOUT_INDEX = 4
+
+const val EMAIL_INDEX = 0
+const val CALL_INDEX = 1
+
+const val MIN_FRAME_ADD_FAV = 10
+const val MAX_FRAME_ADD_FAV = 40
+const val MIN_FRAME_REMOVE_FAV = 45
+const val MAX_FRAME_REMOVE_FAV = 90
+
+const val LAT_INDEX = 0
+const val LNG_INDEX = 1

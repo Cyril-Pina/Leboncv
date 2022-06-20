@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="com.cyriltheandroid.leboncv.model.ItemContact" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="clickListener"
+            type="com.cyriltheandroid.leboncv.adapter.CopyClipboardClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> clickListener.onClick(index, contact)}"
+        android:padding="@dimen/dist_components_submenu">
+
+        <ImageView
+            android:id="@+id/contact_image_view"
+            style="@style/NormalIconImageView"
+            android:contentDescription="@string/ctn_desc_ic_contact"
+            android:src="@{contact.contactIdRes}"
+            android:tint="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@{contact.contactIdRes}"
+            app:tint="@android:color/darker_gray"
+            tools:ignore="UseAppTint"
+            tools:src="@drawable/ic_mail" />
+
+        <TextView
+            android:id="@+id/contact_text_view"
+            style="@style/NormalBoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dist_components_submenu"
+            android:text="@{context.getString(contact.descriptionResId)}"
+            app:layout_constraintBottom_toTopOf="@id/contact_info_text_view"
+            app:layout_constraintStart_toEndOf="@id/contact_image_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Envoyer un e-mail" />
+
+        <TextView
+            android:id="@+id/contact_info_text_view"
+            style="@style/NormalLightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_light"
+            android:lines="@integer/one_line"
+            android:text="@{contact.value}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/contact_text_view"
+            app:layout_constraintTop_toBottomOf="@id/contact_text_view"
+            tools:text="cyril.pinalopes@hotmail.com" />
+
+        <ImageButton
+            android:id="@+id/copy_contact_image_button"
+            style="@style/DefaultImageButton"
+            android:padding="@dimen/item_contact_ic_padding"
+            android:contentDescription="@string/ctn_desc_ic_copy"
+            android:src="@drawable/ic_copy"
+            android:onClick="@{() -> clickListener.onCopy(index, contact.value)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_copy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

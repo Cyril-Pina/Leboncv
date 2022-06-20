@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_page"
+    app:startDestination="@id/search_fragment">
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_fragment_to_category_details_fragment"
+            app:destination="@id/category_details_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+            <argument
+                android:name="categoryType"
+                app:argType="com.cyriltheandroid.leboncv.model.CategoryType" />
+        </action>
+        <action
+            android:id="@+id/action_search_fragment_to_article_fragment"
+            app:destination="@id/article_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+            <argument
+                android:name="article"
+                app:argType="com.cyriltheandroid.leboncv.model.Article" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/category_details_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.CategoryDetailsFragment"
+        android:label="CategoryDetailsFragment"
+        tools:layout="@layout/fragment_category_details">
+        <action
+            android:id="@+id/action_category_details_fragment_to_article_fragment"
+            app:destination="@id/article_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+            <argument
+                android:name="article"
+                app:argType="com.cyriltheandroid.leboncv.model.Article" />
+        </action>
+        <argument
+            android:name="categoryType"
+            app:argType="com.cyriltheandroid.leboncv.model.CategoryType" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/article_fragment"
+        android:name="com.cyriltheandroid.leboncv.ui.fragment.ArticleFragment"
+        android:label="ArticleFragment"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="article"
+            app:argType="com.cyriltheandroid.leboncv.model.Article" />
+        <action
+            android:id="@+id/action_article_fragment_self"
+            app:destination="@id/article_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>
