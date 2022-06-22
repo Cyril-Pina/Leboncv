@@ -1,9 +1,9 @@
 package com.cyriltheandroid.leboncv.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.cyriltheandroid.leboncv.LanguageLevel
+import com.cyriltheandroid.leboncv.data.model.LanguageLevel
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.model.Language
+import com.cyriltheandroid.leboncv.data.model.Language
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

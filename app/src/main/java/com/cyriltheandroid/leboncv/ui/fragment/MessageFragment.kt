@@ -1,5 +1,6 @@
 package com.cyriltheandroid.leboncv.ui.fragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +11,12 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.adapter.ChatMessageAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.ChatMessageAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentMessageBinding
-import com.cyriltheandroid.leboncv.model.ChatMessage
-import com.cyriltheandroid.leboncv.model.MessageType
+import com.cyriltheandroid.leboncv.data.model.ChatMessage
+import com.cyriltheandroid.leboncv.data.model.MessageType
 import com.cyriltheandroid.leboncv.ui.viewmodel.ChatMessageViewModel
+import com.cyriltheandroid.leboncv.utils.FIRST_INDEX
 import dagger.hilt.android.AndroidEntryPoint
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 import javax.inject.Inject
@@ -80,6 +82,7 @@ class MessageFragment : Fragment() {
         )
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun initMessagesRecyclerView(messages: List<ChatMessage>) {
         chatMessageAdapter.chatMessages = messages
         if (binding.messagesRecyclerView.adapter == null) {
@@ -93,7 +96,7 @@ class MessageFragment : Fragment() {
             }
             binding.messagesRecyclerView.adapter = chatMessageAdapter
         } else {
-            binding.messagesRecyclerView.adapter!!.notifyItemChanged(0)
+            binding.messagesRecyclerView.adapter!!.notifyDataSetChanged()
             scrollRecyclerViewOnNewMessage()
         }
     }
@@ -179,6 +182,6 @@ class MessageFragment : Fragment() {
     }
 
     private fun scrollRecyclerViewOnNewMessage() {
-        binding.messagesRecyclerView.smoothScrollToPosition(0)
+        binding.messagesRecyclerView.smoothScrollToPosition(FIRST_INDEX)
     }
 }

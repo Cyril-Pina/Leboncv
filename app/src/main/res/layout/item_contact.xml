@@ -7,7 +7,7 @@
 
         <variable
             name="contact"
-            type="com.cyriltheandroid.leboncv.model.ItemContact" />
+            type="com.cyriltheandroid.leboncv.data.model.ItemContact" />
 
         <variable
             name="index"
@@ -15,7 +15,7 @@
 
         <variable
             name="clickListener"
-            type="com.cyriltheandroid.leboncv.adapter.CopyClipboardClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.CopyClipboardClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

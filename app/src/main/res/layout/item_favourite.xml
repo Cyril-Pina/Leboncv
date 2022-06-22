@@ -9,7 +9,7 @@
 
         <variable
             name="article"
-            type="com.cyriltheandroid.leboncv.model.Article" />
+            type="com.cyriltheandroid.leboncv.data.model.Article" />
 
         <variable
             name="index"
@@ -17,11 +17,11 @@
 
         <variable
             name="clickListener"
-            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.ItemClickListener" />
 
         <variable
             name="favClickListener"
-            type="com.cyriltheandroid.leboncv.adapter.FavouriteClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.FavouriteClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,7 +47,7 @@
                 android:layout_width="@dimen/fav_picture_size"
                 android:layout_height="@dimen/fav_picture_size"
                 android:contentDescription="@string/ctn_desc_article_picture"
-                app:imageUrl="@{article.images != null ? article.images[0].url : @string/empty_string}"
+                imageUrl="@{article.images != null ? article.images[0].url : @string/empty_string}"
                 tools:src="@drawable/img_diploma" />
 
         </androidx.cardview.widget.CardView>
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="@integer/one_line"
-            android:text="@{ArticleUtils.getFavArticleFirstSubtitle(article, article.categoryType)}"
+            android:text="@{ArticleUtils.getFavArticleFirstSubtitle(context, article, article.categoryType)}"
             app:layout_constraintBottom_toTopOf="@id/fav_second_subtitle_text_view"
             app:layout_constraintEnd_toStartOf="@id/favourite_animation_view"
             app:layout_constraintStart_toStartOf="@id/fav_category_text_view"
@@ -118,7 +118,7 @@
             android:ellipsize="end"
             android:maxLines="@integer/two_line"
             android:layout_height="wrap_content"
-            android:text="@{ArticleUtils.getFavArticleSecondSubtitle(article, article.categoryType)}"
+            android:text="@{ArticleUtils.getFavArticleSecondSubtitle(context, article, article.categoryType)}"
             app:layout_constraintBottom_toBottomOf="@id/fav_article_image_view"
             app:layout_constraintEnd_toEndOf="@id/fav_first_subtitle_text_view"
             app:layout_constraintStart_toStartOf="@id/fav_first_subtitle_text_view"
@@ -131,7 +131,7 @@
             android:onClick="@{(view) -> favClickListener.onClick(index, view, article)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:lottie_progress="@{article.fav ? 0.44f : 0.0f}"
+            lottie_progress="@{article.fav ? 0.44f : 0.0f}"
             app:lottie_rawRes="@raw/like_anim"
             app:lottie_speed="@dimen/like_anim_speed" />
 

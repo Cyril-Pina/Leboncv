@@ -61,7 +61,7 @@ fun BottomNavigationView.setupWithNavController(
         // Obtain its id
         val graphId = navHostFragment.navController.graph.id
 
-        if (index == 0) {
+        if (index == FIRST_INDEX) {
             firstFragmentGraphId = graphId
         }
 
@@ -72,7 +72,7 @@ fun BottomNavigationView.setupWithNavController(
         if (this.selectedItemId == graphId) {
             // Update livedata with the selected graph
             selectedNavController.value = navHostFragment.navController
-            attachNavHostFragment(fragmentManager, navHostFragment, index == 0)
+            attachNavHostFragment(fragmentManager, navHostFragment, index == FIRST_INDEX)
         } else {
             detachNavHostFragment(fragmentManager, navHostFragment)
         }
@@ -243,7 +243,7 @@ private fun obtainNavHostFragment(
 
 private fun FragmentManager.isOnBackStack(backStackName: String): Boolean {
     val backStackCount = backStackEntryCount
-    for (index in 0 until backStackCount) {
+    for (index in FIRST_INDEX until backStackCount) {
         if (getBackStackEntryAt(index).name == backStackName) {
             return true
         }

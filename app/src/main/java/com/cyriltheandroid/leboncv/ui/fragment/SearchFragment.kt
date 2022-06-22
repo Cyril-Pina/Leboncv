@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
-import com.cyriltheandroid.leboncv.adapter.CategoryHistoryAdapter
-import com.cyriltheandroid.leboncv.adapter.TopCategoryAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.CategoryHistoryAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.TopCategoryAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentSearchBinding
-import com.cyriltheandroid.leboncv.model.Article
-import com.cyriltheandroid.leboncv.model.CategoryEntity
-import com.cyriltheandroid.leboncv.model.CategoryType
+import com.cyriltheandroid.leboncv.data.model.Article
+import com.cyriltheandroid.leboncv.data.model.Category
+import com.cyriltheandroid.leboncv.data.model.CategoryType
 import com.cyriltheandroid.leboncv.ui.viewmodel.ArticleViewModel
 import com.cyriltheandroid.leboncv.ui.viewmodel.CategoryViewModel
 import com.cyriltheandroid.leboncv.utils.startFavouriteAnimationView
@@ -74,7 +74,7 @@ class SearchFragment : Fragment() {
 
     private fun initItemsClickListeners() {
         categoryHistoryAdapter.categoryClickListener.onItemClick = { _, obj ->
-            val category = obj as CategoryEntity
+            val category = obj as Category
             navigateToCategoryDetails(category.type)
         }
         categoryHistoryAdapter.articlesClickListener.onItemClick = { _, obj ->
@@ -92,7 +92,7 @@ class SearchFragment : Fragment() {
     private fun initTopCategoriesRecyclerView() {
         topCategoriesAdapter.topCategories = categoryViewModel.categories
         topCategoriesAdapter.clickListener.onItemClick = { _, obj ->
-            val topCategory = obj as CategoryEntity
+            val topCategory = obj as Category
             navigateToCategoryDetails(topCategory.type)
         }
         binding.topCategoriesRecyclerView.adapter = topCategoriesAdapter

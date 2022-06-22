@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.cyriltheandroid.leboncv.adapter.LanguageAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.LanguageAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentLangBinding
 import com.cyriltheandroid.leboncv.ui.viewmodel.LanguageViewModel
 import com.cyriltheandroid.leboncv.utils.setCloseFragmentOnClick

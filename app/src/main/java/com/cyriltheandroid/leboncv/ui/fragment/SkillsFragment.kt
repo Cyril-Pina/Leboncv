@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.cyriltheandroid.leboncv.R
 import com.cyriltheandroid.leboncv.databinding.FragmentSkillsBinding
-import com.cyriltheandroid.leboncv.model.Skill
+import com.cyriltheandroid.leboncv.data.model.Skill
 import com.cyriltheandroid.leboncv.ui.viewmodel.SkillsViewModel
 import com.cyriltheandroid.leboncv.utils.setCloseFragmentOnClick
 import com.google.android.material.tabs.TabLayoutMediator

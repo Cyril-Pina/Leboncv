@@ -11,9 +11,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.adapter.ContactAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.ContactAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentContactBinding
-import com.cyriltheandroid.leboncv.model.ItemContact
+import com.cyriltheandroid.leboncv.data.model.ItemContact
 import com.cyriltheandroid.leboncv.ui.viewmodel.ProfileViewModel
 import com.cyriltheandroid.leboncv.utils.CALL_INDEX
 import com.cyriltheandroid.leboncv.utils.EMAIL_INDEX

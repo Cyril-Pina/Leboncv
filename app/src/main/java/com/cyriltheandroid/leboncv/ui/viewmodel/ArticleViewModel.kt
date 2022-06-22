@@ -3,10 +3,10 @@ package com.cyriltheandroid.leboncv.ui.viewmodel
 import android.view.View
 import androidx.lifecycle.*
 import com.airbnb.lottie.LottieAnimationView
-import com.cyriltheandroid.leboncv.mapper.ArticleMapper
-import com.cyriltheandroid.leboncv.model.Article
-import com.cyriltheandroid.leboncv.model.CategoryType
-import com.cyriltheandroid.leboncv.repository.ArticleRepository
+import com.cyriltheandroid.leboncv.data.mapper.ArticleMapper
+import com.cyriltheandroid.leboncv.data.model.Article
+import com.cyriltheandroid.leboncv.data.model.CategoryType
+import com.cyriltheandroid.leboncv.data.repository.ArticleRepository
 import com.cyriltheandroid.leboncv.utils.startFavouriteAnimationView
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

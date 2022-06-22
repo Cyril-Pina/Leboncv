@@ -41,7 +41,7 @@
     <string name="about_msg_a_d">Ce CV sous forme d\'application a pour objectif de résumer mon parcours scolaire ainsi que professionnel en passant par mes projets personnels et mes hobbies. Elle reprend volontairement les codes d\'une célèbre application française.\nDéveloppée par Cyril PINA-LOPES.</string>
     <string name="email_chooser_title">Envoyer un mail à %1$s…</string>
     <string name="contact_email_subject">Prise de contact via Leboncv.</string>
-    <string name="soft_skills_tab_title">compétences générales</string>
+    <string name="soft_skills_tab_title">Compétences générales</string>
     <string name="hard_skills_tab_title">Compétences techniques</string>
     <string name="ctn_desc_ic_camera">Icône Camera</string>
     <string name="empty_string" />
@@ -70,4 +70,6 @@
     <string name="no_favourite_scd_msg">Appuyez simplement sur le coeur en haut à droite des articles.</string>
     <string name="no_result_msg">Désolé, nous n\'avons trouvé aucun résultat.</string>
     <string name="no_result_sec_msg">Veuillez vérifier l\'orthographe ou utiliser d\'autres termes.</string>
+    <string name="now">Aujourd\'hui</string>
+    <string name="less_than_1_month"><![CDATA[< 1 mois]]></string>
 </resources>

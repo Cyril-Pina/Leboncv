@@ -9,7 +9,7 @@
 
         <variable
             name="article"
-            type="com.cyriltheandroid.leboncv.model.Article" />
+            type="com.cyriltheandroid.leboncv.data.model.Article" />
 
         <variable
             name="index"
@@ -17,11 +17,11 @@
 
         <variable
             name="clickListener"
-            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.ItemClickListener" />
 
         <variable
             name="favClickListener"
-            type="com.cyriltheandroid.leboncv.adapter.FavouriteClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.FavouriteClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +54,7 @@
                     android:contentDescription="@string/ctn_desc_top_categories"
                     android:foreground="@drawable/foreground_black_transparent_filter"
                     android:scaleType="centerCrop"
-                    app:imageUrl="@{article.images != null ? article.images[0].url : @string/empty_string}"
+                    imageUrl="@{article.images != null ? article.images[0].url : @string/empty_string}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
                     android:onClick="@{(view) -> favClickListener.onClick(index, view, article)}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:lottie_progress="@{article.fav ? 0.44f : 0.0f}"
+                    lottie_progress="@{article.fav ? 0.44f : 0.0f}"
                     app:lottie_rawRes="@raw/like_anim"
                     app:lottie_speed="@dimen/like_anim_speed" />
 

@@ -52,7 +52,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:lottie_enableMergePathsForKitKatAndAbove="true"
-                app:lottie_progress="@{viewModel.article.fav ? 0.40f : 0.0f}"
+                lottie_progress="@{viewModel.article.fav ? 0.40f : 0.0f}"
                 app:lottie_rawRes="@raw/black_like_anim"
                 app:lottie_speed="@dimen/like_anim_speed" />
 
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dist_components_article_frag"
                     android:layout_marginEnd="@dimen/dist_components_article_frag"
-                    android:text="@{ArticleUtils.getArticleSecondSubtitle(viewModel.article, viewModel.article.categoryType)}"
+                    android:text="@{ArticleUtils.getArticleSecondSubtitle(context, viewModel.article, viewModel.article.categoryType)}"
                     android:visibility="@{ArticleUtils.secondSubtitleVisibility(viewModel.article.categoryType)}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -7,7 +7,7 @@
 
         <variable
             name="itemMenu"
-            type="com.cyriltheandroid.leboncv.model.ItemMenu" />
+            type="com.cyriltheandroid.leboncv.data.model.ItemMenu" />
 
         <variable
             name="index"
@@ -15,7 +15,7 @@
 
         <variable
             name="clickListener"
-            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -3,11 +3,11 @@
 
     <data>
 
-        <import type="com.cyriltheandroid.leboncv.model.CategoryType" />
+        <import type="com.cyriltheandroid.leboncv.data.model.CategoryType" />
 
         <variable
             name="categoryType"
-            type="com.cyriltheandroid.leboncv.model.CategoryType" />
+            type="com.cyriltheandroid.leboncv.data.model.CategoryType" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

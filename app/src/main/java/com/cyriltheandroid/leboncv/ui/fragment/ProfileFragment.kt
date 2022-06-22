@@ -11,9 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.adapter.ProfileMenuAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.ProfileMenuAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentProfileBinding
-import com.cyriltheandroid.leboncv.model.Profile
+import com.cyriltheandroid.leboncv.data.model.Profile
 import com.cyriltheandroid.leboncv.ui.viewmodel.ProfileViewModel
 import com.cyriltheandroid.leboncv.ui.viewmodel.SharedViewModel
 import com.cyriltheandroid.leboncv.utils.*

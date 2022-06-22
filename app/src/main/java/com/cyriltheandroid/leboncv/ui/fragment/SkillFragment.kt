@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.cyriltheandroid.leboncv.adapter.SkillAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.SkillAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentSkillBinding
-import com.cyriltheandroid.leboncv.model.Skill
+import com.cyriltheandroid.leboncv.data.model.Skill
 import dagger.hilt.android.AndroidEntryPoint
 
 const val SKILLS_LIST_KEY = "skills_list"

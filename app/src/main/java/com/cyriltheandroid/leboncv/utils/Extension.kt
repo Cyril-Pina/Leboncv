@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.model.ChatMessage
-import com.cyriltheandroid.leboncv.model.Contact
-import com.cyriltheandroid.leboncv.model.ItemContact
+import com.cyriltheandroid.leboncv.data.model.ChatMessage
+import com.cyriltheandroid.leboncv.data.model.Contact
+import com.cyriltheandroid.leboncv.data.model.ItemContact
 import com.cyriltheandroid.leboncv.room.entity.ChatMessageEntity
 import com.google.android.gms.maps.GoogleMap
 
