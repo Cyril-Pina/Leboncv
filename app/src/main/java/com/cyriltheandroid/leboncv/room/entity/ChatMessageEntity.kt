@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.cyriltheandroid.leboncv.model.MessageType
+import com.cyriltheandroid.leboncv.data.model.MessageType
 import kotlinx.parcelize.Parcelize
 import java.util.*
 

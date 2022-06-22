@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_article">
         <argument
             android:name="article"
-            app:argType="com.cyriltheandroid.leboncv.model.Article" />
+            app:argType="com.cyriltheandroid.leboncv.data.model.Article" />
         <action
             android:id="@+id/action_article_fragment_self"
             app:destination="@id/article_fragment" />

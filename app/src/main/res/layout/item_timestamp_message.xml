@@ -9,11 +9,11 @@
 
         <variable
             name="chatMessage"
-            type="com.cyriltheandroid.leboncv.model.ChatMessage" />
+            type="com.cyriltheandroid.leboncv.data.model.ChatMessage" />
 
         <variable
             name="backgroundClickListener"
-            type="com.cyriltheandroid.leboncv.adapter.ItemClickListener" />
+            type="com.cyriltheandroid.leboncv.ui.adapter.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

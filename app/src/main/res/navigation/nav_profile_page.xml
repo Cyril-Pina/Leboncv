@@ -19,7 +19,7 @@
             app:popExitAnim="@android:anim/slide_out_right">
             <argument
                 android:name="profile"
-                app:argType="com.cyriltheandroid.leboncv.model.Profile" />
+                app:argType="com.cyriltheandroid.leboncv.data.model.Profile" />
         </action>
         <action
             android:id="@+id/action_profile_fragment_to_skills_fragment"
@@ -51,7 +51,7 @@
         tools:layout="@layout/fragment_profile_details">
         <argument
             android:name="profile"
-            app:argType="com.cyriltheandroid.leboncv.model.Profile" />
+            app:argType="com.cyriltheandroid.leboncv.data.model.Profile" />
         <action
             android:id="@+id/action_profile_details_fragment_to_resume_activity"
             app:destination="@id/resume_activity" />
@@ -77,7 +77,7 @@
 
     <activity
         android:id="@+id/resume_activity"
-        android:name="com.cyriltheandroid.leboncv.ui.ResumeActivity"
+        android:name="com.cyriltheandroid.leboncv.ui.activity.ResumeActivity"
         android:label="ResumeActivity"
         tools:layout="@layout/activity_resume" />
 </navigation>

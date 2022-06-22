@@ -7,7 +7,7 @@
 
         <variable
             name="skill"
-            type="com.cyriltheandroid.leboncv.model.Skill" />
+            type="com.cyriltheandroid.leboncv.data.model.Skill" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

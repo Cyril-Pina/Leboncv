@@ -19,7 +19,7 @@
             app:popExitAnim="@android:anim/slide_out_right">
             <argument
                 android:name="categoryType"
-                app:argType="com.cyriltheandroid.leboncv.model.CategoryType" />
+                app:argType="com.cyriltheandroid.leboncv.data.model.CategoryType" />
         </action>
         <action
             android:id="@+id/action_search_fragment_to_article_fragment"
@@ -30,7 +30,7 @@
             app:popExitAnim="@android:anim/slide_out_right">
             <argument
                 android:name="article"
-                app:argType="com.cyriltheandroid.leboncv.model.Article" />
+                app:argType="com.cyriltheandroid.leboncv.data.model.Article" />
         </action>
     </fragment>
 
@@ -48,11 +48,11 @@
             app:popExitAnim="@android:anim/slide_out_right">
             <argument
                 android:name="article"
-                app:argType="com.cyriltheandroid.leboncv.model.Article" />
+                app:argType="com.cyriltheandroid.leboncv.data.model.Article" />
         </action>
         <argument
             android:name="categoryType"
-            app:argType="com.cyriltheandroid.leboncv.model.CategoryType" />
+            app:argType="com.cyriltheandroid.leboncv.data.model.CategoryType" />
     </fragment>
 
     <fragment
@@ -62,7 +62,7 @@
         tools:layout="@layout/fragment_article">
         <argument
             android:name="article"
-            app:argType="com.cyriltheandroid.leboncv.model.Article" />
+            app:argType="com.cyriltheandroid.leboncv.data.model.Article" />
         <action
             android:id="@+id/action_article_fragment_self"
             app:destination="@id/article_fragment"

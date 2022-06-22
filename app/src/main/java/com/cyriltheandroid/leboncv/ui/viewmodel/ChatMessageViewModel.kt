@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.cyriltheandroid.leboncv.mapper.ChatMessageMapper
-import com.cyriltheandroid.leboncv.model.ChatMessage
-import com.cyriltheandroid.leboncv.model.MessageType
-import com.cyriltheandroid.leboncv.repository.ChatMessageRepository
+import com.cyriltheandroid.leboncv.data.mapper.ChatMessageMapper
+import com.cyriltheandroid.leboncv.data.model.ChatMessage
+import com.cyriltheandroid.leboncv.data.model.MessageType
+import com.cyriltheandroid.leboncv.data.repository.ChatMessageRepository
 import com.cyriltheandroid.leboncv.room.entity.ChatMessageEntity
 import com.cyriltheandroid.leboncv.utils.ONE_HOUR
 import com.cyriltheandroid.leboncv.utils.asEntity

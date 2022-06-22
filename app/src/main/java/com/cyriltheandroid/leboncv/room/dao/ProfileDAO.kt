@@ -3,8 +3,8 @@ package com.cyriltheandroid.leboncv.room.dao
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
-import com.cyriltheandroid.leboncv.SkillType
-import com.cyriltheandroid.leboncv.model.ProfilePOJO
+import com.cyriltheandroid.leboncv.data.model.SkillType
+import com.cyriltheandroid.leboncv.room.entity.ProfilePOJO
 import com.cyriltheandroid.leboncv.room.entity.SkillEntity
 import kotlinx.coroutines.flow.Flow
 

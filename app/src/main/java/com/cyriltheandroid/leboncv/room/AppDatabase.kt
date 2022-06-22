@@ -3,7 +3,7 @@ package com.cyriltheandroid.leboncv.room
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.cyriltheandroid.leboncv.model.WorkEntity
+import com.cyriltheandroid.leboncv.room.entity.WorkEntity
 import com.cyriltheandroid.leboncv.room.converter.DateConverter
 import com.cyriltheandroid.leboncv.room.dao.ArticleDAO
 import com.cyriltheandroid.leboncv.room.dao.MessageDAO
@@ -22,7 +22,7 @@ import com.cyriltheandroid.leboncv.room.entity.*
         UserLocationEntity::class,
         ProfileEntity::class,
         ChatMessageEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(DateConverter::class)

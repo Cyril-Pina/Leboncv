@@ -7,7 +7,7 @@
 
         <variable
             name="language"
-            type="com.cyriltheandroid.leboncv.model.Language" />
+            type="com.cyriltheandroid.leboncv.data.model.Language" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

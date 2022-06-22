@@ -10,7 +10,7 @@ const val TIMESTAMP_DATE_FORMAT = "dd/MM/y 'à' HH':'mm"
 const val MESSAGE_DATE_FORMAT = "HH':'mm, dd MMM"
 
 fun getDatesDifferenceInHour(date1: Date, date2: Date): Long {
-    val diff: Long = date1.time - date2.time
+    val diff: Long = date2.time - date1.time
     return diff / SEC_TO_HOUR
 }
 

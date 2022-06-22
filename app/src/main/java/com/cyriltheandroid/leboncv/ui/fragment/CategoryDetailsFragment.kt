@@ -1,22 +1,25 @@
 package com.cyriltheandroid.leboncv.ui.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
-import com.cyriltheandroid.leboncv.adapter.ArticleAdapter
+import com.cyriltheandroid.leboncv.data.model.Article
 import com.cyriltheandroid.leboncv.databinding.FragmentCategoryDetailsBinding
-import com.cyriltheandroid.leboncv.model.Article
+import com.cyriltheandroid.leboncv.ui.adapter.ArticleAdapter
 import com.cyriltheandroid.leboncv.ui.viewmodel.ArticleViewModel
 import com.cyriltheandroid.leboncv.utils.setCloseFragmentOnClick
 import com.cyriltheandroid.leboncv.utils.startFavouriteAnimationView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class CategoryDetailsFragment : Fragment() {
@@ -42,6 +45,13 @@ class CategoryDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initObservers()
         initClickListeners()
+        requestSearchEditTextFocus()
+    }
+
+    private fun requestSearchEditTextFocus() {
+        binding.searchEditText.requestFocus()
+        val manager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        manager.showSoftInput(binding.searchEditText, InputMethodManager.SHOW_IMPLICIT)
     }
 
     private fun initObservers() {

@@ -10,9 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.adapter.FavouriteAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.FavouriteAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentFavouriteBinding
-import com.cyriltheandroid.leboncv.model.Article
+import com.cyriltheandroid.leboncv.data.model.Article
 import com.cyriltheandroid.leboncv.ui.viewmodel.ArticleViewModel
 import com.cyriltheandroid.leboncv.utils.addDivider
 import com.cyriltheandroid.leboncv.utils.startFavouriteAnimationView

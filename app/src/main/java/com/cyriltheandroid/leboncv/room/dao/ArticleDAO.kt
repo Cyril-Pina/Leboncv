@@ -3,8 +3,8 @@ package com.cyriltheandroid.leboncv.room.dao
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
-import com.cyriltheandroid.leboncv.model.ArticlePOJO
-import com.cyriltheandroid.leboncv.model.CategoryType
+import com.cyriltheandroid.leboncv.room.entity.ArticlePOJO
+import com.cyriltheandroid.leboncv.data.model.CategoryType
 import kotlinx.coroutines.flow.Flow
 
 @Dao

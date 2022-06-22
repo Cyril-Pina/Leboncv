@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cyriltheandroid.leboncv.SkillType
-import com.cyriltheandroid.leboncv.mapper.SkillsMapper
-import com.cyriltheandroid.leboncv.model.Skill
-import com.cyriltheandroid.leboncv.repository.SkillsRepository
+import com.cyriltheandroid.leboncv.data.model.SkillType
+import com.cyriltheandroid.leboncv.data.mapper.SkillsMapper
+import com.cyriltheandroid.leboncv.data.model.Skill
+import com.cyriltheandroid.leboncv.data.repository.SkillsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

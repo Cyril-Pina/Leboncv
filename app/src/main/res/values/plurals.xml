@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="amount_of_years">
+        <item quantity="one">%d an</item>
+        <item quantity="other">%d ans</item>
+    </plurals>
+    <plurals name="amount_of_months">
+        <item quantity="other">%d mois</item>
+    </plurals>
+</resources>

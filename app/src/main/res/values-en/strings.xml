@@ -71,4 +71,6 @@
     <string name="no_favourite_scd_msg">Simply click on the heart at the top right of the articles.</string>
     <string name="no_result_msg">Sorry, we did not find any results.</string>
     <string name="no_result_sec_msg">Please check spelling or use other terms.</string>
+    <string name="now">Now</string>
+    <string name="less_than_1_month"><![CDATA[< 1 month]]></string>
 </resources>

@@ -1,7 +1,9 @@
 package com.cyriltheandroid.leboncv.utils
 
+import android.content.Context
 import android.view.View
-import com.cyriltheandroid.leboncv.model.*
+import com.cyriltheandroid.leboncv.R
+import com.cyriltheandroid.leboncv.data.model.*
 
 class ArticleUtils {
     companion object {
@@ -79,28 +81,28 @@ class ArticleUtils {
             }
 
         @JvmStatic
-        fun getArticleSecondSubtitle(article: Article, categoryType: CategoryType): String =
+        fun getArticleSecondSubtitle(context: Context, article: Article, categoryType: CategoryType): String =
             when (categoryType) {
                 CategoryType.PROFESSIONAL_XP -> {
                     val professionalXPArticle = article as ProfessionalXPArticle
                     "${professionalXPArticle.work?.getReadableBeginDate()} " +
-                            "- ${professionalXPArticle.work?.getReadableEndingDate() ?: "Aujourd'hui"}"
+                            "- ${professionalXPArticle.work?.getReadableEndingDate() ?: context.getString(R.string.now)}"
                 }
                 CategoryType.PERSONAL_PROJECT -> {
                     val personalProjectArticle = article as PersonalProjectArticle
                     "${personalProjectArticle.duration?.getReadableBeginDate()} " +
-                            "- ${personalProjectArticle.duration?.getReadableEndingDate() ?: "Aujourd'hui"}"
+                            "- ${personalProjectArticle.duration?.getReadableEndingDate() ?: context.getString(R.string.now)}"
                 }
                 CategoryType.FORMATION -> {
                     val formationArticle = article as FormationArticle
                     "${formationArticle.diploma?.getReadableBeginDate()} " +
-                            "- ${formationArticle.diploma?.getReadableEndingDate() ?: "Aujourd'hui"}"
+                            "- ${formationArticle.diploma?.getReadableEndingDate() ?: context.getString(R.string.now)}"
                 }
                 else -> ""
             }
 
         @JvmStatic
-        fun getFavArticleFirstSubtitle(article: Article, categoryType: CategoryType): String =
+        fun getFavArticleFirstSubtitle(context: Context, article: Article, categoryType: CategoryType): String =
             when (categoryType) {
                 CategoryType.PROFESSIONAL_XP -> {
                     val professionalXPArticle = article as ProfessionalXPArticle
@@ -109,7 +111,7 @@ class ArticleUtils {
                 CategoryType.PERSONAL_PROJECT -> {
                     val personalProjectArticle = article as PersonalProjectArticle
                     "${personalProjectArticle.duration?.getReadableBeginDate()} " +
-                            "- ${personalProjectArticle.duration?.getReadableEndingDate() ?: "Aujourd'hui"}"
+                            "- ${personalProjectArticle.duration?.getReadableEndingDate() ?: context.getString(R.string.now)}"
                 }
                 CategoryType.FORMATION -> {
                     val formationArticle = article as FormationArticle
@@ -119,15 +121,15 @@ class ArticleUtils {
             }
 
         @JvmStatic
-        fun getFavArticleSecondSubtitle(article: Article, categoryType: CategoryType): String =
+        fun getFavArticleSecondSubtitle(context: Context, article: Article, categoryType: CategoryType): String =
             when (categoryType) {
                 CategoryType.PROFESSIONAL_XP -> {
                     val professionalXPArticle = article as ProfessionalXPArticle
-                    "${professionalXPArticle.work?.getDateDifference()}"
+                    "${professionalXPArticle.work?.getDateDifference(context)}"
                 }
                 CategoryType.PERSONAL_PROJECT -> {
                     val personalProjectArticle = article as PersonalProjectArticle
-                    "${personalProjectArticle.duration?.getDateDifference()}"
+                    "${personalProjectArticle.duration?.getDateDifference(context)}"
                 }
                 CategoryType.HOBBIES -> {
                     val hobbyArticle = article as HobbyArticle
@@ -135,7 +137,7 @@ class ArticleUtils {
                 }
                 CategoryType.FORMATION -> {
                     val formationArticle = article as FormationArticle
-                    "${formationArticle.diploma?.getDateDifference()}"
+                    "${formationArticle.diploma?.getDateDifference(context)}"
                 }
                 else -> ""
             }

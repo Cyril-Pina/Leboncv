@@ -12,11 +12,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.airbnb.lottie.LottieAnimationView
 import com.cyriltheandroid.leboncv.R
-import com.cyriltheandroid.leboncv.adapter.ImagesSlidePagerAdapter
-import com.cyriltheandroid.leboncv.adapter.SmallArticleAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.ImagesSlidePagerAdapter
+import com.cyriltheandroid.leboncv.ui.adapter.SmallArticleAdapter
 import com.cyriltheandroid.leboncv.databinding.FragmentArticleBinding
-import com.cyriltheandroid.leboncv.model.Article
-import com.cyriltheandroid.leboncv.model.ArticleImage
+import com.cyriltheandroid.leboncv.data.model.Article
+import com.cyriltheandroid.leboncv.data.model.ArticleImage
 import com.cyriltheandroid.leboncv.ui.viewmodel.ArticleViewModel
 import com.cyriltheandroid.leboncv.utils.disableGesture
 import com.cyriltheandroid.leboncv.utils.setCloseFragmentOnClick
