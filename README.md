@@ -1,9 +1,13 @@
 # Leboncv
 
-Leboncv est un concept présentant mon CV sous forme d'application Android et reprenant le design de "Leboncoin".
+Leboncv est un concept présentant mon CV sous forme d'application Android et reprenant le design de "Leboncoin".\
 Toutes mes expériences professionnelles, mes projets personnels, mes formations ainsi que mes passes-temps y sont renseignés.
 
-<img src="https://user-images.githubusercontent.com/78708458/121337807-3415a380-c91d-11eb-9c25-02d47081dc9d.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852349-a6a4cb80-ccef-11eb-8d28-292b23638469.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121851924-0f3f7880-ccef-11eb-8142-953abc0f0e87.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121851943-1797b380-ccef-11eb-9468-7a10f5415eee.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121853020-9fca8880-ccf0-11eb-884e-7d966e9ed3e0.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121851987-21211b80-ccef-11eb-912a-2b4d855cabe2.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852009-28e0c000-ccef-11eb-8f1b-9ded4ca860cf.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852610-069b7200-ccf0-11eb-91bf-fc39039a18ae.gif" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852600-026f5480-ccf0-11eb-8bfe-45c16371c4e2.gif" width=150 height=300 />
+
+<img src="https://user-images.githubusercontent.com/38280340/175330768-8e280955-90fd-40c5-940c-aeb47f5e29dc.png" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/38280340/175331047-7f9542d6-7d2c-4b0f-9fc2-ea96605f0419.gif" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/38280340/175331074-fbaee845-f1f9-43d0-8e92-fc1765f95363.png" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/38280340/175331038-2093ec7a-7009-4a99-b1f0-235d027eef03.gif" width=150 height=300 />
+
+
+<img src="https://user-images.githubusercontent.com/38280340/175331206-2c80ae66-c3a0-4852-844c-0494154de5e7.png" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/38280340/175331210-bada0960-66e3-4061-80b6-dea905f89753.png" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/38280340/175331021-4968dbe0-6e88-442f-b1a1-494db336e747.gif" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/38280340/175331212-bde93f65-77f6-43c2-afea-7cd1bbfa0b8a.png" width=150 height=300 />
 
 
 - [Installation](#Installation)
@@ -25,10 +29,10 @@ Une fois l'installation terminée, récupérer l'URL ci-dessous et importer le p
    - :student: Formations.
    - :soccer: Hobbies.
 - [x] Un système de favoris :heart: afin de garder sous le coude les éléments qui vous intéressent.
-- [x] Un début de chatbot :robot: vous demandant votre prénom.
-- [x] Une page profil détaillée regroupant des informations sur moi-même dont mes compétences techniques (hard skills) et générales (soft skills). 
-- [x] Disponible en français :fr: et anglais :uk:
-- [x] Gestion du mode paysage. 
+- [x] Un début de chatbot :robot: vous demandant votre prénom (vraiment un début).
+- [x] Une page profil détaillée regroupant des informations sur moi-même dont mes compétences techniques (hard skills :hammer_and_pick:) et générales (soft skills :handshake:). 
+- [x] Disponible en français :fr: et anglais :uk:.
+- [x] Gestion du mode paysage.
 - [x] Compatible Android 7.0+.
 
 ## Technologies
