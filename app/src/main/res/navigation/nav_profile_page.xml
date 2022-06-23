@@ -52,9 +52,6 @@
         <argument
             android:name="profile"
             app:argType="com.cyriltheandroid.leboncv.data.model.Profile" />
-        <action
-            android:id="@+id/action_profile_details_fragment_to_resume_activity"
-            app:destination="@id/resume_activity" />
     </fragment>
 
     <fragment
@@ -74,10 +71,4 @@
         android:name="com.cyriltheandroid.leboncv.ui.fragment.ContactFragment"
         android:label="ContactFragment"
         tools:layout="@layout/fragment_contact" />
-
-    <activity
-        android:id="@+id/resume_activity"
-        android:name="com.cyriltheandroid.leboncv.ui.activity.ResumeActivity"
-        android:label="ResumeActivity"
-        tools:layout="@layout/activity_resume" />
 </navigation>
