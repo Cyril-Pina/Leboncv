@@ -1,86 +1,48 @@
-# Introduction
+# Informations Positives
 
-This is a template for doing Android development using GitLab and [fastlane](https://fastlane.tools/).
-It is based on the tutorial for Android apps in general that can be found [here](https://developer.android.com/training/basics/firstapp/). 
-If you're learning Android at the same time, you can also follow along that
-tutorial and learn how to do everything all at once.
+Retrouvez toutes les informations positives de la planète directement dans votre smartphone.\
+Choisissez parmi plusieurs catégories afin de maximiser vos chances de tomber sur l'article qui vous irait le mieux.
 
-# Reference links
+<img src="https://user-images.githubusercontent.com/78708458/121337807-3415a380-c91d-11eb-9c25-02d47081dc9d.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852349-a6a4cb80-ccef-11eb-8d28-292b23638469.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121851924-0f3f7880-ccef-11eb-8142-953abc0f0e87.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121851943-1797b380-ccef-11eb-9468-7a10f5415eee.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121853020-9fca8880-ccf0-11eb-884e-7d966e9ed3e0.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121851987-21211b80-ccef-11eb-912a-2b4d855cabe2.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852009-28e0c000-ccef-11eb-8f1b-9ded4ca860cf.jpg" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852610-069b7200-ccf0-11eb-91bf-fc39039a18ae.gif" width=150 height=300 /> <img src="https://user-images.githubusercontent.com/78708458/121852600-026f5480-ccf0-11eb-8bfe-45c16371c4e2.gif" width=150 height=300 />
 
-- [GitLab CI Documentation](https://docs.gitlab.com/ee/ci/)
-- [Blog post: Android publishing with GitLab and fastlane](https://about.gitlab.com/2019/01/28/android-publishing-with-gitlab-and-fastlane/)
 
-You'll definitely want to read through the blog post since that walks you in detail
-through a working production configuration using this model.
+- [Installation](#Installation)
+- [Fonctionnalités](#Fonctionnalités)
+- [Technologies](#Technologies)
+- [Licence](#Licence)
 
-# Getting started
+## Installation
+### Android Studio
 
-First thing is to follow the [Android tutorial](https://developer.android.com/training/basics/firstapp/) and
-get Android Studio installed on your machine, so you can do development using
-the Android IDE. Other IDE options are possible, but not directly described or
-supported here. If you're using your own IDE, it should be fairly straightforward
-to convert these instructions to use with your preferred toolchain.
+Installer Android Studio via le site officiel : https://developer.android.com/studio  
+Une fois l'installation terminée, récupérer l'URL ci-dessous et importer le projet avec "Project from Version Control..."\
+`https://github.com/Cyril-Pina/InformationsPositives.git`
 
-## What's contained in this project
+## Fonctionnalités
 
-### Android code
+- [x] Disponible en français :fr: et anglais :uk:.
+- [x] Compatible Android 7.0+.
 
-The state of this project is as if you followed the first few steps in the linked
-[Android tutorial](https://developer.android.com/training/basics/firstapp/) and
-have created your project. You're definitely going to want to open up the
-project and change the settings to match what you plan to build. In particular,
-you're at least going to want to change the following:
+## Technologies
 
-- Application Name: "My First App"
-- Company Domain: "example.com"
+Technologies utilisées | Version
+------------ | -------------
+Kotlin | 1.6.21
+Dagger Hilt | 2.40.1
+Navigation | 2.4.2
+Room | 2.4.2
+Glide | 4.13.0
+SonarQube | 3.4.0.2513
+GitLab CI/CD | //
+Fastlane | 2.180.1
+Sentry | 6.0.0
+Lottie | 3.6.0
+Google Maps | 18.0.2
+Espresso | 3.4.0
+Gradle | 7.2.1
 
-### Fastlane files
+## Licence
 
-It also has fastlane setup per our [blog post](https://about.gitlab.com/2019/01/28/android-publishing-with-gitlab-and-fastlane/) on
-getting GitLab CI set up with fastlane. Note that you may want to update your
-fastlane bundle to the latest version; if a newer version is available, the pipeline
-job output will tell you.
-
-### Dockerfile build environment
-
-In the root there is a Dockerfile which defines a build environment which will be
-used to ensure consistent and reliable builds of your Android application using
-the correct Android SDK and other details you expect. Feel free to add any
-build-time tools or whatever else you need here.
-
-We generate this environment as needed because installing the Android SDK
-for every pipeline run would be very slow.
-
-### Gradle configuration
-
-The gradle configuration is exactly as output by Android Studio except for the
-version name being updated to 
-
-Instead of:
-
-`versionName "1.0"`
-
-It is now set to:
-
-`versionName "1.0-${System.env.VERSION_SHA}"`
-
-You'll want to update this for whatever versioning scheme you prefer.
-
-### Build configuration (`.gitlab-ci.yml`)
-
-The sample project also contains a basic `.gitlab-ci.yml` which will successfully 
-build the Android application.
-
-Note that for publishing to the test channels or production, you'll need to set
-up your secret API key. The stub code is here for that, but please see our
-[blog post](https://about.gitlab.com/2019/01/28/android-publishing-with-gitlab-and-fastlane/) for
-details on how to set this up completely. In the meantime, publishing steps will fail.
-
-The build script also handles automatic versioning by relying on the CI pipeline
-ID to generate a unique, ever increasing number. If you have a different versioning
-scheme you may want to change this.
-
-```yaml
-    - "export VERSION_CODE=$(($CI_PIPELINE_IID)) && echo $VERSION_CODE"
-    - "export VERSION_SHA=`echo ${CI_COMMIT_SHA:0:8}` && echo $VERSION_SHA"
-```
+Copyright © Cyril The Android\
+Designé et développé par Cyril "The Android" Pina-Lopes.\
+Contact via cyril.pinalopes@hotmail.com.
