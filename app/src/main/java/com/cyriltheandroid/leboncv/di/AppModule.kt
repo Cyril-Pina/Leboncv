@@ -23,7 +23,6 @@ object AppModule {
         AppDatabase::class.java,
         "leboncv_database"
     ).createFromAsset("leboncv-database.db")
-        .fallbackToDestructiveMigration()
         .build()
 
     @Singleton
