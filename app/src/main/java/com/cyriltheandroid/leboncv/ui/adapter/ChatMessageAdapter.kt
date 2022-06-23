@@ -55,10 +55,6 @@ class ChatMessageAdapter @Inject constructor(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return when (viewType) {
-            MessageType.TIMESTAMP.ordinal -> {
-                val binding = ItemTimestampMessageBinding.inflate(layoutInflater, parent, false)
-                TimestampViewHolder(binding)
-            }
             MessageType.MY_MESSAGE.ordinal -> {
                 val binding = ItemOutgoingMessageBinding.inflate(layoutInflater, parent, false)
                 MyMsgViewHolder(binding)
@@ -67,7 +63,7 @@ class ChatMessageAdapter @Inject constructor(
                 val binding = ItemIncomingMessageBinding.inflate(layoutInflater, parent, false)
                 OtherMsgViewHolder(binding)
             }
-            else -> {
+            else -> { // MessageType.TIMESTAMP.ordinal
                 val binding = ItemTimestampMessageBinding.inflate(layoutInflater, parent, false)
                 TimestampViewHolder(binding)
             }

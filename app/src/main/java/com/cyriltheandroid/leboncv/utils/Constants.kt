@@ -18,3 +18,5 @@ const val MAX_FRAME_REMOVE_FAV = 90
 
 const val LAT_INDEX = 0
 const val LNG_INDEX = 1
+
+const val resumePdfUrl = "https://www.fichier-pdf.fr/2022/06/16/cvleboncoincyrilpinalopes/cvleboncoincyrilpinalopes.pdf"

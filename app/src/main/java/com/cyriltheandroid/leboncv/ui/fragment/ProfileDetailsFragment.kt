@@ -1,14 +1,16 @@
 package com.cyriltheandroid.leboncv.ui.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.cyriltheandroid.leboncv.databinding.FragmentProfileDetailsBinding
 import com.cyriltheandroid.leboncv.ui.viewmodel.ProfileDetailsViewModel
+import com.cyriltheandroid.leboncv.utils.resumePdfUrl
 import com.cyriltheandroid.leboncv.utils.setCloseFragmentOnClick
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,13 +35,14 @@ class ProfileDetailsFragment : Fragment() {
 
     private fun initClickListeners() {
         binding.showResumeButton.setOnClickListener {
-            navigateToResumeActivity()
+            showResumeInWebBrowser()
         }
     }
 
-    private fun navigateToResumeActivity() {
-        val action = ProfileDetailsFragmentDirections.actionProfileDetailsFragmentToResumeActivity()
-        val navController = findNavController()
-        navController.navigate(action)
+    private fun showResumeInWebBrowser() {
+        val resumeUrlToLoad = "https://docs.google.com/gview?embedded=true&url=$resumePdfUrl"
+        val uri = Uri.parse(resumeUrlToLoad)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        requireContext().startActivity(intent)
     }
 }

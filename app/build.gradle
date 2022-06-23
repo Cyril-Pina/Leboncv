@@ -4,6 +4,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'org.sonarqube'
 
 android {
     compileSdkVersion 32
@@ -82,6 +83,7 @@ dependencies {
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
 }
+
 repositories {
     mavenCentral()
 }

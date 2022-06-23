@@ -65,3 +65,4 @@ debugTests:
   only:
     - merge_requests
     - tags
+
