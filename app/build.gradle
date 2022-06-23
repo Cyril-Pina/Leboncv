@@ -16,20 +16,11 @@ android {
         versionName "1.0-${System.env.VERSION_SHA}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
-    signingConfigs {
-        release {
-            storeFile file('/Users/cyril-voltaire/StudioProjects/apk-keys/leboncv_keystore')
-            storePassword "Xme>xci,1"
-            keyAlias "leboncv_key"
-            keyPassword "Xme>xci,1"
-        }
-    }
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
     buildFeatures {
