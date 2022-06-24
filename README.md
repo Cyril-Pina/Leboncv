@@ -52,6 +52,7 @@ Lottie | 3.6.0
 Google Maps | 18.0.2
 Espresso | 3.4.0
 Gradle | 7.2.1
+MVVM | //
 
 ## Licence
 
