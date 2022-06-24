@@ -1,4 +1,4 @@
-# Leboncv
+ # <img src="https://user-images.githubusercontent.com/38280340/175517223-8816a9b4-c855-4d26-af65-a9f2a43a53fa.png" width=25 height=25 /> Leboncv
 
 Leboncv est un concept présentant mon CV sous forme d'application Android et reprenant le design de "Leboncoin".\
 Toutes mes expériences professionnelles, mes projets personnels, mes formations ainsi que mes passes-temps y sont renseignés.
